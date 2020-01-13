@@ -1,5 +1,6 @@
 ﻿using AddressBook.StaticDataFile;
 using System.Linq;
+using AddressBook.Data;
 using Xunit;
 
 namespace AddressBook.Tests.StaticDataFile
@@ -37,6 +38,15 @@ namespace AddressBook.Tests.StaticDataFile
         public void LoadAddresses()
         {
             var data = loader.LoadFile();
+
+            Assert.Equal(6, data.Count());
+        }
+
+        [Fact]
+        public void LoadAllFromIAddressesDataLoader()
+        {
+            var i = (IAddressesDataLoader) loader;
+            var data = i.GetAllAddresses();
 
             Assert.Equal(6, data.Count());
         }

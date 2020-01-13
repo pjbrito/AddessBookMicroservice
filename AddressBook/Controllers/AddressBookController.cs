@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AddressBook.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace AddressBook.Controllers
 {
@@ -11,6 +8,13 @@ namespace AddressBook.Controllers
     [ApiController]
     public class AddressBookController : ControllerBase
     {
+        private readonly IAddressesDataLoader addressesDataLoader;
+
+        public AddressBookController(IAddressesDataLoader addressesDataLoader)
+        {
+            this.addressesDataLoader = addressesDataLoader;
+        }
+
         // GET: api/AddressBook
         [HttpGet("GetAllGroupedAddresses")]
         public IEnumerable<string> GetAddresses()
@@ -43,4 +47,5 @@ namespace AddressBook.Controllers
         {
         }
     }
+
 }

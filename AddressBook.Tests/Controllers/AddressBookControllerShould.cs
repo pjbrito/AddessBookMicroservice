@@ -1,4 +1,5 @@
 ﻿using AddressBook.Controllers;
+using AddressBook.StaticDataFile;
 using Xunit;
 
 namespace AddressBook.Tests.Controllers
@@ -9,7 +10,7 @@ namespace AddressBook.Tests.Controllers
 
         public AddressBookControllerShould()
         {
-            controller = new AddressBookController();
+            controller = new AddressBookController(new AddressesStaticDataFileLoader());
         }
 
         [Fact]

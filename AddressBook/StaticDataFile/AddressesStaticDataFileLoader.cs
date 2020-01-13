@@ -1,4 +1,5 @@
 ﻿using AddressBook.ApiModels;
+using AddressBook.Data;
 using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text.Json;
 
 namespace AddressBook.StaticDataFile
 {
-    public class AddressesStaticDataFileLoader
+    public class AddressesStaticDataFileLoader : IAddressesDataLoader
     {
         public IEnumerable<Address> LoadFile()
         {
@@ -30,6 +31,11 @@ namespace AddressBook.StaticDataFile
             var result = JsonSerializer.Deserialize(jsonFile, typeof(List<Address>), options) as List<Address>;
 
             return result;
+        }
+
+        public IEnumerable<Address> GetAllAddresses()
+        {
+            return LoadFile();
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AddressBook.ApiModels;
+﻿using AddressBook.ApiModels;
 using Xunit;
 
 namespace AddressBook.Tests.ApiModels

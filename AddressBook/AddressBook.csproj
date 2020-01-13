@@ -10,5 +10,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="StaticDataFile\StaticRepo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 
 </Project>

@@ -1,6 +1,6 @@
-﻿using AddressBook.StaticDataFile;
+﻿using AddressBook.Data;
+using AddressBook.StaticDataFile;
 using System.Linq;
-using AddressBook.Data;
 using Xunit;
 
 namespace AddressBook.Tests.StaticDataFile

@@ -1,4 +1,5 @@
-﻿using AddressBook.Data;
+﻿using AddressBook.ApiModels;
+using AddressBook.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -17,9 +18,9 @@ namespace AddressBook.Controllers
 
         // GET: api/AddressBook
         [HttpGet("GetAllGroupedAddresses")]
-        public IEnumerable<string> GetAddresses()
+        public IEnumerable<AddressGroup> GetAddresses()
         {
-            return new string[] { "value1", "value2" };
+            return QueriesLinq.GroupAddressesBy((Address x) => x.City, addressesDataLoader);
         }
 
     }
